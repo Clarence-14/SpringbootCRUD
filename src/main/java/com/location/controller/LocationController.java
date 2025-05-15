@@ -19,18 +19,18 @@ import com.location.service.LocationService;
 
 
 @RestController
-@RequestMapping("/locations")
+@RequestMapping("locations")
 public class LocationController {
 
     @Autowired
     private LocationService locationService;
     
-    @GetMapping("/locations")
+    @GetMapping("locations")
     public ResponseEntity<List<Location>> getAllLocations() {
         return ResponseEntity.ok(locationService.getAllLocations());
     }
 
-     @GetMapping("/locations/locationId")
+     @GetMapping("/locationId")
     public ResponseEntity<Location> getLocationById(@PathVariable("locationId") Long locationId) {
         return ResponseEntity.ok(locationService.getLocationById(locationId));
     }
